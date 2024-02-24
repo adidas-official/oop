@@ -1,0 +1,19 @@
+Zadání úkolu:
+
+Pracujte s vytvoøenımi (pøipravenımi) deklaracemi a proveïte implementaci definic. Neupravujte pøipravené. 
+Postup je v plnìní definice jednotlivıch metod shora dolù a vyuívejte metod uvedenıch vıše. 
+Pro ovìøení, pomocí <F5> spustíte testy.
+
+Zadání: 
+1.) Proveïte implementace tøídy BankovniUcet, která popisuje bankovní úèet. Objekt úètu má atributy èíslo úètu, hodnotu maximálního povoleného vıbìru z úètu a zùstatek na úètì.
+Má metody, které umoní vloit èástku na úèet (nezáporné èíslo) a vybrat èástku z úètu (nezáporné èíslo splòující podmínku maximálního povoleného vıbìru). Objekt eviduje poèet 
+úspìšnì provedenıch vkladù a vıbìr, celkovou sumu vkladù a sumu vıbìrù. Umoòuje dodateènì mìnit hodnotu maximálního povoleného vkladu. 
+Èíslo úètu je textovı údaj, kterı je dynamicky alokovanım øetìzcem nezbytnì nutné délky. Pøi vytvoøení objektu se provede kopie údaje èísla úètu pøedaného parametrem konstruktoru.
+Objekt úètu poskytuje všechny údaje dle specifikovaného rozhraní (deklarace). 
+Umoòuje zapsat do vıstupního proudu informace o úètì ve tvaru: 
+Napø. pro úèet s èíslem 123456/0800, zùstatkem 250.0 Kè, poètem vkladù 3, poètem vıbìrù 5, celkovou vybranou èástkou 580.0, celkovou vloenou èástkou 420.0 se vypíší informace ve formátu:
+
+123456/0800 : 250.0 Kè
+3 : +580.0 Kè
+5 : -420.0 Kè
+

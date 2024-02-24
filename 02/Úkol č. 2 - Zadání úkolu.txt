@@ -1,0 +1,25 @@
+Úkol #2:
+
+V tomto úkolu vytvoříte třídu pro práci s bankovním účtem (třída Ucet). 
+Pro účet se evidují tyto údaje: jméno majitele účtu, číslo účtu, zůstatek a maximální povolený výběr. 
+Je umožněno vybírat z účtu požadovanou částku tak, aby byla splněno podmínka maximálního výběru a nevznikl po výběru na účtě záporný zůstatek. Účet neumožní provést takový výběr, který nebude možné realizovat v rámci zůstatku na účtě. 
+Vklad je neomezený, ale ošetřte případ hackerského útoku, :); . Účet navíc eviduje počet úspěšných vkladů a počet úspěšných výběrů, součet všech vkladů a součet všech výběrů. Účet dále eviduje historii vkládaných nebo vybíraných částek. 
+Maximální počet operací vkladů a výběru je určen při vytvoření objektu účtu.
+
+Nadefinujte třídu 'Ucet' podle tohoto zadání. Operace vkladu a výběru neprovádí žádnou vstupní nebo výstupní operaci (čtení dat, zápis dat), částka k výběru/ke vkladu se předává parametrem. Maximální povolný výběr je řešen konstantou 
+třídy a má hodnotu 5 000 Kč. Při ladění můžete vždy po provedení operace zobrazit informaci o úspěšnosti/neúspěšnosti provedení operace. Třída pracuje s údaji uvedenými níže. 
+
+Číslo účtu (celé číslo v rozsahu 100001 až 109999)
+Jméno a příjmení majitele (oddělené mezerou)
+Zůstatek na účtu (nezáporné číslo s přesností na dvě desetinná místa)
+Počet vkladů (nezáporné celé číslo)
+Počet výběrů (nezáporné celé číslo)
+Součet příchozích plateb (nezáporné číslo s přesností na dvě desetinná místa)
+Součet odchozích plateb (nezáporné číslo s přesností na dvě desetinná místa)
+Maxium počtu opererací vkladu
+Historie vkladů: údaje oddělené středníkem
+Historie výběrů: údaje oddělené středníkem
+
+Metody třídy implementujte podle potřeby a to s co největším využitím principů OOP. Využijte modulárního programování - odevzdejte soubor s hlavní funkcí a další implementované soubory. 
+
+Odevzdání úkolů dle pokynů a do data odevzdávní, viz. odevzdání úkolu č. 2.
