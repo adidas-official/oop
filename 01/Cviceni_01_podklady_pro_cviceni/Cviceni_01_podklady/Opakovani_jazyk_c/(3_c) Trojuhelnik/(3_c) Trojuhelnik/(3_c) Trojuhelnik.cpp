@@ -1,0 +1,121 @@
+﻿// (3_c) Trojuhelnik.cpp : Tento soubor obsahuje funkci main. Provádění programu se tam zahajuje a ukončuje.
+//
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <stdlib.h>
+
+// dopředná deklarace (lze volat funkce definované pod místem volání)
+double spocti_obvod(double a, double b, double c);
+double spocti_obsah(double a, double b, double c);
+bool test_rovnoramenny(double a, double b, double c);
+bool test_rovnostranny(double a, double b, double c);
+void tisk_trojuhelnik(double a, double b, double c, double obvod, double obsah, bool rovnoramenny, bool rovnostranny);
+bool test_trojuhelnik(double a, double b, double c);
+void nacti_strany_trojuhelnika(double* a, double* b, double* c);
+
+// definice funkcí
+
+double spocti_obvod(double a, double b, double c)
+{
+    /*
+    double obvod;
+    obvod = a + b + c;
+    return obvod;
+    */
+    return a + b + c;
+}
+
+double spocti_obsah(double a, double b, double c)
+{
+    double s;
+    double obsah;
+    s = (a + b + c) / 2;
+    obsah = sqrt(s * (s - a) * (s - b) * (s - c));
+    // obsah = sqrt((a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c));
+    return obsah; // sqrt(s * (s - a) * (s - b) * (s - c));
+}
+
+bool test_rovnoramenny(double a, double b, double c)
+{
+    return !test_rovnostranny(a, b, c) && (a == b || b == c || c == a);
+}
+
+bool test_rovnostranny(double a, double b, double c)
+{
+    return a == b && b == c && c == a;
+}
+
+void tisk_trojuhelnik(double a, double b, double c, double obvod, double obsah, bool rovnoramenny, bool rovnostranny)
+{
+    printf("Trojuhelnik:\na = %f\nb = %f\nc = %f\n", a, b, c);
+    printf("Obvod = %f\nObsah = %f\n", obvod, obsah);
+    //printf("Rovnoramenny = %d\nRovnostranny = %d\n", rovnoramenny, rovnostranny);
+    printf("Rovnoramenny = ");
+    if (rovnoramenny == 0)
+        printf("NE");
+    else
+        printf("ANO");
+    printf("\nRovnostranny = ");
+    if (rovnostranny == 0)
+        printf("NE");
+    else
+        printf("ANO");
+    printf("\n");
+}
+
+bool test_trojuhelnik(double a, double b, double c)
+{
+    bool test = a > 0.0 && b > 0.0 && c > 0.0;
+    test = test && ((a + b) > c && (b + c) > a && (c + a) > b);
+    return test;
+}
+
+void nacti_strany_trojuhelnika(double* a, double* b, double* c)
+{
+    printf("Zadej stranu a: ");
+    scanf("%lf", a);
+    printf("Zadej stranu b: ");
+    scanf("%lf", b);
+    printf("Zadej stranu c: ");
+    scanf("%lf", c);
+}
+
+int main()
+{
+    double a, b, c;
+    double obvod, obsah;
+    double s;
+    bool /* short */ rovnostranny, rovnoramenny;
+
+    // pořízení vstupních dat (načtení dat)
+    nacti_strany_trojuhelnika(&a, &b, &c);   // ukazatel == adresa pameti
+
+    if (test_trojuhelnik(a, b, c))
+    {
+        // výpočet
+        obvod = spocti_obvod(a, b, c);
+        obsah = spocti_obsah(a, b, c);
+        rovnostranny = test_rovnostranny(a, b, c);
+        rovnoramenny = test_rovnoramenny(a, b, c);
+
+        // zprostředkování výsledku
+        tisk_trojuhelnik(a, b, c, obvod, obsah, rovnoramenny, rovnostranny);
+
+    }
+    else
+        printf("Chyba:Nektera ze stran trojuhelnika je chybne zadana.\n");
+
+    system("PAUSE");
+}
+
+// Spuštění programu: Ctrl+F5 nebo nabídka Ladit > Spustit bez ladění
+// Ladění programu: F5 nebo nabídka Ladit > Spustit ladění
+
+// Tipy pro zahájení práce:
+//   1. K přidání nebo správě souborů použijte okno Průzkumník řešení.
+//   2. Pro připojení ke správě zdrojového kódu použijte okno Team Explorer.
+//   3. K zobrazení výstupu sestavení a dalších zpráv použijte okno Výstup.
+//   4. K zobrazení chyb použijte okno Seznam chyb.
+//   5. Pokud chcete vytvořit nové soubory kódu, přejděte na Projekt > Přidat novou položku. Pokud chcete přidat do projektu existující soubory kódu, přejděte na Projekt > Přidat existující položku.
+//   6. Pokud budete chtít v budoucnu znovu otevřít tento projekt, přejděte na Soubor > Otevřít > Projekt a vyberte příslušný soubor .sln.

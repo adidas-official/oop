@@ -1,0 +1,12 @@
+Úkol na implementaci operací s komplexními čísly.
+
+V tomto úkolu si vyzkoušíte přetěžování operátorů pro třídu.
+Specificky se jedná o třídu "pjc::complex" a matematické operátory +, - a * (pouze v binární variantě).
+Specificky chceme, aby bylo možné sčítat (respektive odčítat nebo násobit) dvě instance třídy "pjc::complex" nebo instance třídy "pjc::complex"
+s objekty typu "double". Implementaci operátorů deklarovaných v souboru "tiny-05.hpp" zapište do souboru "tiny-05.cpp".
+Jiné soubory než "tiny-05.cpp" neměňte.
+
+Pokud si nepamatujete jak fungují dané operace nad komplexními čísly, wikipedie poradí, např.:
+http://math.feld.cvut.cz/0educ/predpokl/msu7.pdf
+
+

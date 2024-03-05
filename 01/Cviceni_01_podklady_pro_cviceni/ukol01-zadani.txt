@@ -1,0 +1,9 @@
+Úkol #1:
+
+V tomto úkolu si vyzkoušíte přetěžování operátorů pro třídu. Specificky se jedná o třídu pjc::complex a matematické operátory +, - a * (pouze v binární variantě). Specificky chceme, aby bylo možné sčítat (respektive odčítat nebo násobit) 
+dvě instance třídy pjc::complex nebo instance třídy pjc::complex s objekty typu double. Implementaci operátorů podle hlavičky "tiny-05.hpp" zapište do souboru "tiny-05.cpp", projekt zabalte (!!!použijte zip) a odevzdejte. 
+!!! V projektu odstraňte složky vzniklé kompilací (.vs a x64), důležité je, aby zůstaly soubory tiny-05.h a tiny-05.cpp.
+
+V projektu jsou implementovány testy. Spuštěním testů ověříte funkčnost implementace úkolu. V tomto úkolu není realizace uživatelského rozhraní, tj. interakce s uživatelem.
+
+Odevzdání úkolů dle pokynů a do data odevzdávní, viz. odevzdání úkolu č. 1.

@@ -1,0 +1,109 @@
+
+
+Strukturovaná rozšíření jazyka C++
+-------------------------------------
+
+- možnost definovat více funkcí/metod stejného názvu
+"přetížení funkcí/metod", více funkcí/metod má stejný název; musí se lišit počtem parametrů nebo datovými typy parametrů
+
+Dají se přetížené funkce odlišit návratovou hodnotou? Ne
+Mohou nastat nějaké komplikace? při přetypování vznikne nejednoznačnost pro zavolání funkce/metody
+
+void tisk(char z)
+{
+	printf("%c%c%c", '\'', z, '\'');
+}
+
+void tisk(char z, char sep)
+{
+	printf("%c%c%c", sep, z, sep);
+}
+
+void tisk(char z, int n)
+{
+	printf("%c:%d", z, n);
+}
+
+
+char znak = 'd';
+tisk('a');
+tisk(znak);
+tisk(znak, '-');
+tisk('a', 5);
+
+
+Příklad-1:
+
+int max(int a, int b)
+{
+	return a > b ? a : b;
+}
+
+int max(int a, int b, int c)
+{
+	//return ((a > b) ? (a > c ? a : c) : (b > c ? b : c));
+	int max;
+	if (a > b)
+		if (a > c)
+			max = b;
+		else
+			max = c;
+	else
+		if (b > c)
+			max = b;
+		else
+			max = c;
+	return max;
+}
+
+char max(char a, char b)
+{
+	return a > b ? a : b;
+}
+
+char* max(char* str1, char* str2)
+{
+	return (strcmp(str1, str2) == 1 ? str1 : str2);
+}
+
+Příklad-2:
+
+
+
+- parametr s implicitní hodnotou
+
+Příklad-3:
+
+double spocitej(double a, double b, char op = '+')
+{
+	double vysledek;
+	switch (op)
+	{
+	case '+':
+		vysledek = a + b;
+		break;
+
+	case '-':
+		vysledek = a - b;
+		break;
+
+	case '*':
+		vysledek = a * b;
+		break;
+
+	case '/':
+		vysledek = a / b;
+		break;
+
+	default:
+		printf("Neplatny symbol operace.");
+		break;
+	}
+
+	return vysledek;
+}
+
+	double cislo1 = 2.54, cislo2 = 5.25, vysledek1, vysledek2;
+	vysledek1 = spocitej(cislo1, cislo2);
+	vysledek2 = spocitej(cislo1, cislo2, '*');
+

@@ -1,0 +1,199 @@
+Bitové a logické operátory, maskování bitů
+-----------------------------------------------------------------------------------------
+
+- bitové a logické operátory, praktické využití v aplikacích
+	
+Př. 
+	
+	int a = 6, b = 5, c, d;
+	c = a & b; d = a | b;
+	
+Př. 
+	
+	int s = 7;
+	int f1 = (s & 1 != 0);
+	int f2 = (s & 2 != 0);
+	int f3 = (s & 4 != 0);
+	
+K procvičení:
+Uchováváme informaci o více logických jevech v jedné (celočíselné) proměnné. Mějte jevy e0, e1, e2, e3.  Jaká hodnota bude zapsána v proměnné v případě, že 
+a) Všechny jevy jsou pravdivé. 
+b) Pravdivý je jev e0, e1, e2.
+c) Pravdivý je jev e0, e1, e3. 
+
+
+
+(Standardní) Vstup a výstup dat v konzolové aplikace - souborové proudy
+-----------------------------------------------------------------------------------------
+
+cout, cin
+namespace std:  std::cout, std::cin;    using namespace std;    cout, cin
+
+endl
+
+zřetězení
+
+[Ukázka 1:]
+
+int a;
+double b;
+char jmeno[80];
+
+cin >> a;
+cin >> b;
+cin >> jmeno;
+
+cin >> a >> b >> jmeno;
+
+cout << "XXX" << a << ";" << b << endl;
+cout << endl << endl << "XXX";
+
+cout << jmeno << endl;
+
+
+
+Strukturovaná rozšíření jazyka C++
+-----------------------------------------------------------------------------------------
+
+- libovolné místo deklarace proměnných uvnitř funkce/metody
+
+- for (int i = 0; ....)
+
+- datový typ logická hodnota, bool, {false, true}
+
+- referenční proměnná & - práce s referencní proměnnou, příklady využití, const ref
+
+- inline funkce - význam a použití
+
+- přetížení funkce - význam a použití, podmínky pro přetížení
+
+- parametr s implicitní hodnotou - význam a použití, podmínky pro definování parametru s implicitní hodnotou
+
+
+[Ukázka 1:]
+
+bool a = true;
+a == false
+!a
+if (a), if (!a), if (a == true), if (a == false), if (!(a == true)), ...
+
+
+[Ukázka 2:]
+
+int b;
+int &c = b;
+
+b = 4;
+cout << b << ";" << c << endl;
+c = 2;
+cout << b << ";" << c << endl;
+
+
+void swap(int &a, int &b) inline
+{
+	int c = a;
+	a = b;
+	b = c;
+}
+
+int d = 5, e = 4;
+cout << d ";" << e << endl;
+swap(d, e);
+cout << d << ";" << e << endl;
+
+void nactiTrojuhelnik(TTrojuhelnik &t)
+{
+	cin >> t.a >> t.b >> t.c;
+}
+
+void tiskTrojuhelnik(const TTrojuhelnik &t)
+{
+	cout << t.a << ";" << t.b << ";" << t.c << end;
+}
+
+TTrohuhelnik tr;
+nactiTrojuhelnik(tr);
+tiskTrojuhelniK(tr);
+
+
+[Ukázka 3:]
+
+int max(int a, int b)
+{
+
+}
+
+int max(int a, int b, int c)
+{
+
+}
+
+void swap(int &a, int &b)
+{
+
+}
+
+void swap(float &a, float &b)
+{
+
+}
+
+
+
+void f(int a, int b)
+{
+
+}
+
+void f(int a, float b)
+{
+
+}
+
+void f(float a, int b)
+{
+
+}
+
+void f(int a, char b)
+{
+
+}
+
+
+int c;
+float d;
+f(d, c);
+
+
+char e;
+f2(e, c)
+
+[Ukázka 4:]
+
+void tisk(char sep = ';')
+{
+	cout << sep;
+}
+
+void tisk(int[] values, int n, char sep = ';', bool ln = true)
+{
+	for (int i = 0; i < n; i++)
+		cout << values[i] << sep;
+
+	if (ln)
+		cout << endl;
+}
+
+tisk();
+tisk(',');
+
+const int N = 5;
+int v[] = {5, 4, 8, 1, 3};
+tisk(v, N);
+tisk(v, N, ',');
+tisk(v, N, ',', false);
+tisk(v, N, ';', false);
+
+
+přetížení funkce; přetížení funkce + parametr s implicitní hodnotou: kolizní stavy
