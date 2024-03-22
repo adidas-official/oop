@@ -1,4 +1,5 @@
 #include "tiny-05.hpp"
+#include <iostream>
 
 namespace pjc {
 
@@ -20,6 +21,53 @@ double complex::imag() const {
 
 void complex::imag(double d) {
     m_imag = d;
+}
+
+complex complex::operator+(complex const& rhs)
+{
+    return complex(real() + rhs.real(), imag() + rhs.imag());
+}
+
+complex complex::operator-(complex const& rhs)
+{
+    return complex(real() - rhs.real(), imag() - rhs.imag());
+}
+
+complex complex::operator*(complex const& rhs)
+{
+    return complex(real() * rhs.real() - imag() * rhs.imag(), real() * rhs.imag() + imag() * rhs.real());
+}
+
+complex complex::operator+(double const& rhs)
+{
+    return complex(real() + rhs, imag());
+}
+
+complex complex::operator-(double const& rhs)
+{
+    return complex(real() - rhs, imag());
+}
+
+complex complex::operator*(double const& rhs)
+{
+    return complex(real() * rhs, imag() * rhs);
+}
+
+
+
+complex operator+(double const& lhs, complex const& rhs)
+{
+    return complex(lhs + rhs.real(), rhs.imag());
+}
+
+complex operator-(double const& lhs, complex const& rhs)
+{
+    return complex(lhs - rhs.real(), -rhs.imag());
+}
+
+complex operator*(double const& lhs, complex const& rhs)
+{
+    return complex(lhs * rhs.real(), lhs * rhs.imag());
 }
 
 }

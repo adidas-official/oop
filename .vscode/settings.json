@@ -1,3 +1,10 @@
 {
-    "dotnet.defaultSolution": "disable"
+    "dotnet.defaultSolution": "disable",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.twig": "twig",
+        "ostream": "cpp",
+        "limits": "cpp",
+        "iostream": "cpp"
+    }
 }
