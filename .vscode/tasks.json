@@ -54,7 +54,8 @@
                 "-g",
                 "${file}",
                 "BankovniUcet.cpp",
-                "PraceSUctem_Menu.cpp",
+                "tests-main.cpp",
+                // "PraceSUctem_Menu.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

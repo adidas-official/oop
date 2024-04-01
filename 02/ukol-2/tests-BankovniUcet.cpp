@@ -55,9 +55,9 @@ TEST_CASE("Work with object", "[all]") {
 			bool op;
 			char* cislo_uctu1 = new char[12]{ "123456/0800" };
 			BankovniUcet* u1 = new BankovniUcet(cislo_uctu1);
-			//REQUIRE(strcmp(u1->GetCisloUctu(), cislo_uctu1) == 0);
+			REQUIRE(strcmp(u1->GetCisloUctu(), cislo_uctu1) == 0);
 
-			//REQUIRE(u1->GetMaxVyber() == 1000);
+			REQUIRE(u1->GetMaxVyber() == 1000);
 			REQUIRE(u1->GetZustatek() == 0.0);
 			REQUIRE(u1->Get_n_vklad() == 0);
 			REQUIRE(u1->Get_n_vyber() == 0);

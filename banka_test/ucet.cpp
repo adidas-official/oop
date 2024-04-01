@@ -19,16 +19,21 @@ BankovniUcet::~BankovniUcet()
     delete[] cislo_uctu;
 }
 
-char* BankovniUcet::getAccountNumber() const
+char* BankovniUcet::GetAccountNumber() const
 {
 	char* result = (char*) cislo_uctu;
 	return result;
     // return account_number;
 }
 
-int BankovniUcet::getMaxVyber() const
+int BankovniUcet::GetMaxVyber() const
 {
     return this->max_vyber;
+}
+
+double BankovniUcet::GetZustatek() const
+{
+	return this->zustatek;
 }
 
 
@@ -36,8 +41,9 @@ int main(int argc, char const *argv[])
 {
     char* cislo_uctu1 = new char[12]{ "523456/0800" };
     BankovniUcet* u1 = new BankovniUcet(cislo_uctu1);
-    cout << u1->getAccountNumber() << endl;
-    cout << u1->getMaxVyber() << endl;
+    cout << u1->GetAccountNumber() << endl;
+    cout << u1->GetMaxVyber() << endl;
+    cout << u1->GetZustatek() << endl;
 
     delete u1;
     return 1;

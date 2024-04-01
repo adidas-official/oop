@@ -13,6 +13,9 @@ class BankovniUcet {
 
     char *cislo_uctu; 
 
+    double zustatek;
+	int n_vklad;
+
     public:
 	BankovniUcet(char *cislo_uctu);
 
@@ -20,7 +23,9 @@ class BankovniUcet {
 
     ~BankovniUcet();
 
-    char* getAccountNumber() const;
+    char* GetAccountNumber() const;
 
-    int getMaxVyber() const;
+    int GetMaxVyber() const;
+
+    double GetZustatek() const;
 };

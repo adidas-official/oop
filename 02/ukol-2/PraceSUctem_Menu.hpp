@@ -94,9 +94,3 @@ public:
 	void realizace();
 
 };
-
-int main()
-{
-	BankovniUcet bu("123456/0800");
-	return 0;
-}
