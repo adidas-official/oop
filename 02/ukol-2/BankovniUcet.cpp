@@ -81,7 +81,6 @@ double BankovniUcet::Get_suma_vyber() const
 
 bool BankovniUcet::Vlozit(double kolik)
 {
-	// todo: prijmout jen kladna cisla
 	if (kolik > 0)
 	{
 		cout << "Vlozeno " << kolik << " na ucet" << endl;
@@ -96,7 +95,6 @@ bool BankovniUcet::Vlozit(double kolik)
 
 bool BankovniUcet::Vybrat(double kolik)
 {
-	// todo: prijmout jen kladna cisla
 	if (kolik > 0 && kolik <= this->zustatek && kolik <= this->max_vyber)
 	{
 		this->n_vyber++;
@@ -109,8 +107,6 @@ bool BankovniUcet::Vybrat(double kolik)
 	return false;
 }
 
-// ----
-
 /*friend*/ ostream& operator<<(ostream &os, const BankovniUcet &u)
 {
 	os << u.GetCisloUctu() << ":" << u.GetZustatek() << " Kč" << endl;
@@ -118,35 +114,3 @@ bool BankovniUcet::Vybrat(double kolik)
 	os << u.Get_n_vyber() << ":-" << u.Get_suma_vyber() << " Kč" << endl;
 	return os;
 }
-
-
-// int main()
-// {		
-// 	char* cislo_uctu1 = new char[12]{ "123456/0800" };
-// 	BankovniUcet* u1 = new BankovniUcet(cislo_uctu1);
-
-// 	// u1->Vlozit(500); // ok
-// 	// cout << "Zustatek: " << u1->GetZustatek() << endl;
-// 	cout << "Pocet vkladu: " << u1->Get_n_vklad() << endl;
-// 	// cout << "Pocet vyberu: " << u1->Get_n_vyber() << endl;
-// 	// u1->Vybrat(200); // ok
-// 	// cout << "Zustatek: " << u1->GetZustatek() << endl;
-// 	// cout << "Pocet vkladu: " << u1->Get_n_vklad() << endl;
-// 	// cout << "Pocet vyberu: " << u1->Get_n_vyber() << endl;
-// 	// u1->Vybrat(600); // nedostatek penez
-// 	// cout << "Zustatek: " << u1->GetZustatek() << endl;
-// 	// cout << "Pocet vkladu: " << u1->Get_n_vklad() << endl;
-// 	// cout << "Pocet vyberu: " << u1->Get_n_vyber() << endl;
-// 	// u1->Vlozit(5000); // ok
-// 	// cout << "Zustatek: " << u1->GetZustatek() << endl;
-// 	// cout << "Pocet vkladu: " << u1->Get_n_vklad() << endl;
-// 	// cout << "Pocet vyberu: " << u1->Get_n_vyber() << endl;
-// 	// u1->Vybrat(2000); // vyber limit
-// 	// cout << "Zustatek: " << u1->GetZustatek() << endl;
-// 	// cout << "Pocet vkladu: " << u1->Get_n_vklad() << endl;
-// 	// cout << "Pocet vyberu: " << u1->Get_n_vyber() << endl;
-	
-// 	// cout << *u1;
-
-// 	return 0;
-// }
