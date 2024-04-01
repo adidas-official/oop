@@ -140,3 +140,5 @@ void PraceSUctem::realizace()
 
 	delete ucet;
 }
+
+

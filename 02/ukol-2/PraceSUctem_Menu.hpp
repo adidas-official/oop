@@ -3,94 +3,100 @@
 #include "BankovniUcet.hpp"
 
 /*
-* Tøída obsluhuje práci s úètem. 
+* Tï¿½ï¿½da obsluhuje prï¿½ci s ï¿½ï¿½tem. 
 */
 class PraceSUctem
 {
 public:
 
 	/*
-	* Zobrazí menu na standardní výstup (dle zadání).
+	* Zobrazï¿½ menu na standardnï¿½ vï¿½stup (dle zadï¿½nï¿½).
 	*/
 	void tisk_menu();
 
 	/*
-	* Zobrazí pokyn 'Zadej volbu' na standardní výstup a zajistí naètení znaku ze standardního vstupu. 
-	* Naètený znak vrátí návratovou hodnot (bez kontroly, jakýkoliv znak).
+	* Zobrazï¿½ pokyn 'Zadej volbu' na standardnï¿½ vï¿½stup a zajistï¿½ naï¿½tenï¿½ znaku ze standardnï¿½ho vstupu. 
+	* Naï¿½tenï¿½ znak vrï¿½tï¿½ nï¿½vratovou hodnot (bez kontroly, jakï¿½koliv znak).
 	*/
 	char volba_menu();
 
 	/*
-	* Otestuje znak, jestli je platnou volbou menu. Výsledek testování vrátí návratovou hodnotu true - OK, false - chybný znak.
+	* Otestuje znak, jestli je platnou volbou menu. Vï¿½sledek testovï¿½nï¿½ vrï¿½tï¿½ nï¿½vratovou hodnotu true - OK, false - chybnï¿½ znak.
 	*/
 	bool test_volba_menu(char volba);
 
 	/*
-	* S využitím funkcí výše zajistí zobrazení menu. A následnì opakované naètení volby menu, pokud bude zadána neplatná volba.
+	* S vyuï¿½itï¿½m funkcï¿½ vï¿½ï¿½e zajistï¿½ zobrazenï¿½ menu. A nï¿½slednï¿½ opakovanï¿½ naï¿½tenï¿½ volby menu, pokud bude zadï¿½na neplatnï¿½ volba.
 	*/
 	char zajisti_volba_menu_kontrola();
 
 	/*
-	* Zajistí vytvoøení objektu bankovního úètu s defaultní hodnotou maximálního výbìru. Odkaz na vytvoøený objekt vrátí návratovou hodnotou. 
+	* Zajistï¿½ vytvoï¿½enï¿½ objektu bankovnï¿½ho ï¿½ï¿½tu s defaultnï¿½ hodnotou maximï¿½lnï¿½ho vï¿½bï¿½ru. Odkaz na vytvoï¿½enï¿½ objekt vrï¿½tï¿½ nï¿½vratovou hodnotou. 
 	*/
 	BankovniUcet* operace_vytvorit_bankovni_ucet(char *cislo_uctu);
 
 	/*
-	*  Zajistí vytvoøení objektu bankovního úètu s daným èíslem úètu a hodnotou maximálního výbìru. Odkaz na vytvoøený objekt vrátí návratovou hodnotou. 
+	*  Zajistï¿½ vytvoï¿½enï¿½ objektu bankovnï¿½ho ï¿½ï¿½tu s danï¿½m ï¿½ï¿½slem ï¿½ï¿½tu a hodnotou maximï¿½lnï¿½ho vï¿½bï¿½ru. Odkaz na vytvoï¿½enï¿½ objekt vrï¿½tï¿½ nï¿½vratovou hodnotou. 
 	*/
 	BankovniUcet* operace_vytvorit_bankovni_ucet(char* cislo_uctu, int max_vyber);
 
 	/*	
-	* Dotáže se, zda se má vytvoøit úèet s defaultní hodnotou maximálního vkladu nebo se zadanou hodnotou maximálního vkladu. 
-	* Zajistí naètení èísla úètu a pøípadnì hodnoty maximálního vkladu, zajistí vytvoøení odpovídajícího úètu. 
-	* Viz zadání úkolu.
+	* Dotï¿½e se, zda se mï¿½ vytvoï¿½it ï¿½ï¿½et s defaultnï¿½ hodnotou maximï¿½lnï¿½ho vkladu nebo se zadanou hodnotou maximï¿½lnï¿½ho vkladu. 
+	* Zajistï¿½ naï¿½tenï¿½ ï¿½ï¿½sla ï¿½ï¿½tu a pï¿½ï¿½padnï¿½ hodnoty maximï¿½lnï¿½ho vkladu, zajistï¿½ vytvoï¿½enï¿½ odpovï¿½dajï¿½cï¿½ho ï¿½ï¿½tu. 
+	* Viz zadï¿½nï¿½ ï¿½kolu.
 	*/
 	BankovniUcet* zajistit_vytvorit_bankovni_ucet();
 
 	/*
-	* Zajistí vložení èástky kolik na úèet a zobrazí výsledek provedení operace. Viz zadání úkolu. 
+	* Zajistï¿½ vloï¿½enï¿½ ï¿½ï¿½stky kolik na ï¿½ï¿½et a zobrazï¿½ vï¿½sledek provedenï¿½ operace. Viz zadï¿½nï¿½ ï¿½kolu. 
 	*/
 	void operace_vlozit_na_ucet(BankovniUcet* u, double kolik);
 
 	/*
-	* Pro pøedaný bankovní úèet provede vklad zadané èástky pro vložení. 
-	* Využije výše definovaných metod. 
+	* Pro pï¿½edanï¿½ bankovnï¿½ ï¿½ï¿½et provede vklad zadanï¿½ ï¿½ï¿½stky pro vloï¿½enï¿½. 
+	* Vyuï¿½ije vï¿½ï¿½e definovanï¿½ch metod. 
 	*/
 	void zajistit_vlozit_na_ucet(BankovniUcet* u);
 
 	/*
-	* Zajistí výbìr èástky kolik z úèet a zobrazí výsledek provedení operace. Viz zadání úkolu. 
+	* Zajistï¿½ vï¿½bï¿½r ï¿½ï¿½stky kolik z ï¿½ï¿½et a zobrazï¿½ vï¿½sledek provedenï¿½ operace. Viz zadï¿½nï¿½ ï¿½kolu. 
 	*/
 	void operace_vybrat_z_uctu(BankovniUcet* u, double kolik);
 
 	/*
-	* Pro pøedaný bankovní úèet provede výbìr zadané èástky pro výbìr.
-	* Využije výše definovaných metod.
+	* Pro pï¿½edanï¿½ bankovnï¿½ ï¿½ï¿½et provede vï¿½bï¿½r zadanï¿½ ï¿½ï¿½stky pro vï¿½bï¿½r.
+	* Vyuï¿½ije vï¿½ï¿½e definovanï¿½ch metod.
 	*/
 	void zajistit_vybrat_z_uctu(BankovniUcet* u);
 
 	/*
-	* Zajistí zobrazení informací o úètì na standardním výstupu. 
-	* Využije se pøetížení operátoru <<.
+	* Zajistï¿½ zobrazenï¿½ informacï¿½ o ï¿½ï¿½tï¿½ na standardnï¿½m vï¿½stupu. 
+	* Vyuï¿½ije se pï¿½etï¿½enï¿½ operï¿½toru <<.
 	*/
 	void operace_tisk_info_ucet(BankovniUcet *u);
 
 	/*
-	* Zajistí zápis informací o úètu do souboru definovaného parametrem. 
+	* Zajistï¿½ zï¿½pis informacï¿½ o ï¿½ï¿½tu do souboru definovanï¿½ho parametrem. 
 	*/
 	void operace_ulozit_do_souboru(BankovniUcet* u, char* filename);
 
 	/*
-	* Pro pøedaný úèet, zajistí zápis informací o úètì do zadaného souboru.
-	* Využije se výše definovaných metod.
+	* Pro pï¿½edanï¿½ ï¿½ï¿½et, zajistï¿½ zï¿½pis informacï¿½ o ï¿½ï¿½tï¿½ do zadanï¿½ho souboru.
+	* Vyuï¿½ije se vï¿½ï¿½e definovanï¿½ch metod.
 	*/
 	void zajisti_ulozit_do_souboru(BankovniUcet* u);
 
 	// ----
 
 	/*
-	* Zajistí kompletní realizaci obsluhy a práce úètem, viz zadání úkolu. 
+	* Zajistï¿½ kompletnï¿½ realizaci obsluhy a prï¿½ce ï¿½ï¿½tem, viz zadï¿½nï¿½ ï¿½kolu. 
 	*/
 	void realizace();
 
 };
+
+int main()
+{
+	BankovniUcet bu("123456/0800");
+	return 0;
+}

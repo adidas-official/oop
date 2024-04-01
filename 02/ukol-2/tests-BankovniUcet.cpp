@@ -1,5 +1,5 @@
 #include "BankovniUcet.hpp"
-
+#include <string.h>
 #include "catch.hpp"
 
 

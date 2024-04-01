@@ -1,48 +1,49 @@
 #pragma once
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 /*
-* Globální funkce. 
-* Zjistí délku øetìzce. 
+* Globï¿½lnï¿½ funkce. 
+* Zjistï¿½ dï¿½lku ï¿½etï¿½zce. 
 */
 int Length_Str(char* s);
 
 /*
- * Tøída popisuje bankovní úèet.
+ * Tï¿½ï¿½da popisuje bankovnï¿½ ï¿½ï¿½et.
  */
 class BankovniUcet
 {
 private:
 
 	/*
-	* Konstanta objektu. Defaultní hodnota pro max. výbìr.
+	* Konstanta objektu. Defaultnï¿½ hodnota pro max. vï¿½bï¿½r.
 	*/
 	enum { MAX_VYBER = 1000 };
 
 	/*
-	* Hodnota max. výbìru nastavena na úètu.
+	* Hodnota max. vï¿½bï¿½ru nastavena na ï¿½ï¿½tu.
 	*/
 	int max_vyber;
 
 	/*
-	* Zùstatek na úètu.
+	* Zï¿½statek na ï¿½ï¿½tu.
 	*/
 	double zustatek;
 
 	/*
-	* Èíslo úètu (dynamicky alokovaný øetìzec).
+	* ï¿½ï¿½slo ï¿½ï¿½tu (dynamicky alokovanï¿½ ï¿½etï¿½zec).
 	*/
 	char *cislo_uctu;
 
 	/*
-	* Poèet vkladu.
+	* Poï¿½et vkladu.
 	*/
 	int n_vklad;
 
 	/*
-	* Poèet výbìru.
+	* Poï¿½et vï¿½bï¿½ru.
 	*/
 	int n_vyber;
 
@@ -52,91 +53,91 @@ private:
 	double suma_vklad;
 
 	/*
-	* Souèet výbìru (Celkový výbìr).
+	* Souï¿½et vï¿½bï¿½ru (Celkovï¿½ vï¿½bï¿½r).
 	*/
 	double suma_vyber;
 
 public:	
 
 	/*
-	* Konstruktor parametrický. 
-	* Provede inicializaci objektu bankovního úètu podle pøedaného èísla úètu (použije kopii hodnoty øetìzce a vytvoøí øetìzec atributu nezbytnì nutné délky), hodnota max. výbìru bude defaultní hodnota specifikovana konstantou MAX_VYBER.
+	* Konstruktor parametrickï¿½. 
+	* Provede inicializaci objektu bankovnï¿½ho ï¿½ï¿½tu podle pï¿½edanï¿½ho ï¿½ï¿½sla ï¿½ï¿½tu (pouï¿½ije kopii hodnoty ï¿½etï¿½zce a vytvoï¿½ï¿½ ï¿½etï¿½zec atributu nezbytnï¿½ nutnï¿½ dï¿½lky), hodnota max. vï¿½bï¿½ru bude defaultnï¿½ hodnota specifikovana konstantou MAX_VYBER.
 	*/
 	BankovniUcet(char *cislo_uctu);
 
 	/*
-	* Konstruktor parametrický. 
-	* Provede inicializaci objektu bankovního úètu z pøedaných hodnot èísla úètu  (použije kopii hodnoty øetìzce a vytvoøí øetìzec atributu nezbytnì nutné délky) a maximálního výbìru. 
+	* Konstruktor parametrickï¿½. 
+	* Provede inicializaci objektu bankovnï¿½ho ï¿½ï¿½tu z pï¿½edanï¿½ch hodnot ï¿½ï¿½sla ï¿½ï¿½tu  (pouï¿½ije kopii hodnoty ï¿½etï¿½zce a vytvoï¿½ï¿½ ï¿½etï¿½zec atributu nezbytnï¿½ nutnï¿½ dï¿½lky) a maximï¿½lnï¿½ho vï¿½bï¿½ru. 
 	*/
 	BankovniUcet(char *cislo_uctu, int max_vyber);
 
 	/*
 	* Destruktor.
-	* Provede uvolnìní objektu.
+	* Provede uvolnï¿½nï¿½ objektu.
 	*/
 	~BankovniUcet();
 
 	// ----
 
 	/*
-	* Vrátí aktuální zùstatek na úètu (hodnotu nastavenou v atributu zustatek).
+	* Vrï¿½tï¿½ aktuï¿½lnï¿½ zï¿½statek na ï¿½ï¿½tu (hodnotu nastavenou v atributu zustatek).
 	*/
 	double GetZustatek() const;
 
 	/*
-	* Vrátí nastavené èíslo úètu, resp. odkaz na text.
+	* Vrï¿½tï¿½ nastavenï¿½ ï¿½ï¿½slo ï¿½ï¿½tu, resp. odkaz na text.
 	*/
 	char* GetCisloUctu() const;
 
 	/*
-	* Vrátí nastavený maximální výbìr z úètu (hodnotu nastavenou v atributu max_vyber).
+	* Vrï¿½tï¿½ nastavenï¿½ maximï¿½lnï¿½ vï¿½bï¿½r z ï¿½ï¿½tu (hodnotu nastavenou v atributu max_vyber).
 	*/
 	int GetMaxVyber() const;
 
 	/*
-	* Pøenastaví hodnotu maximálního výbìru na úètu pokud bude nastavovaná hodnota platnou hodnotou kladného èísla. V opaèném pøípadì nastavení neprobìhne.
+	* Pï¿½enastavï¿½ hodnotu maximï¿½lnï¿½ho vï¿½bï¿½ru na ï¿½ï¿½tu pokud bude nastavovanï¿½ hodnota platnou hodnotou kladnï¿½ho ï¿½ï¿½sla. V opaï¿½nï¿½m pï¿½ï¿½padï¿½ nastavenï¿½ neprobï¿½hne.
 	*/
 	void SetMaxVyber(int max_vyber);
 
 	/*
-	* Vrátí poèet vkladù (hodnotu nastavenou v atributu n_vklad).
+	* Vrï¿½tï¿½ poï¿½et vkladï¿½ (hodnotu nastavenou v atributu n_vklad).
 	*/
 	int Get_n_vklad() const;
 
 	/*
-	* Vrátí poèet výbìrù (hodnotu nastavenou v atributu n_vyber).
+	* Vrï¿½tï¿½ poï¿½et vï¿½bï¿½rï¿½ (hodnotu nastavenou v atributu n_vyber).
 	*/
 	int Get_n_vyber() const;
 
 	/*
-	* Vrátí sumu vkladù (hodnotu nastavenou v atributu suma_vklad).
+	* Vrï¿½tï¿½ sumu vkladï¿½ (hodnotu nastavenou v atributu suma_vklad).
 	*/
 	double Get_suma_vklad() const;
 
 	/*
-	* Vrátí sumu výbìrù (hodnotu nastavenou v atributu suma_vyber). 
+	* Vrï¿½tï¿½ sumu vï¿½bï¿½rï¿½ (hodnotu nastavenou v atributu suma_vyber). 
 	*/
 	double Get_suma_vyber() const;
 
 	// ----
 
 	/*
-	* Zajistí vložení èástky kolik na úèet, pokud bude èástka splòovat podmínku nezáporného èísla. Návratovou hodnotou vrátí pøíznak provedení operace - true : provedeno, false : neprovedeno. 
+	* Zajistï¿½ vloï¿½enï¿½ ï¿½ï¿½stky kolik na ï¿½ï¿½et, pokud bude ï¿½ï¿½stka splï¿½ovat podmï¿½nku nezï¿½pornï¿½ho ï¿½ï¿½sla. Nï¿½vratovou hodnotou vrï¿½tï¿½ pï¿½ï¿½znak provedenï¿½ operace - true : provedeno, false : neprovedeno. 
 	*/
 	bool Vlozit(double kolik);
 
 	/*
-	* Zajistí výbìr èástky kolik z úètu, pokud bude èástka splòovat podmínku nezáporného èísla a podmínku pro omezení výbìru (< max_vyber).
+	* Zajistï¿½ vï¿½bï¿½r ï¿½ï¿½stky kolik z ï¿½ï¿½tu, pokud bude ï¿½ï¿½stka splï¿½ovat podmï¿½nku nezï¿½pornï¿½ho ï¿½ï¿½sla a podmï¿½nku pro omezenï¿½ vï¿½bï¿½ru (< max_vyber).
 	*/
 	bool Vybrat(double kolik);
 
 	// ----
 
 	/*
-	* Pøetížení operátoru výstupu, který zapíše do výstupního proudu informace o úèetu ve tvaru:
-	* èíslo úètu : zùstatek Kè
-	* poèet vkladù : +suma Kè
-	* poèet výbìrù : -suma Kè
+	* Pï¿½etï¿½enï¿½ operï¿½toru vï¿½stupu, kterï¿½ zapï¿½e do vï¿½stupnï¿½ho proudu informace o ï¿½ï¿½etu ve tvaru:
+	* ï¿½ï¿½slo ï¿½ï¿½tu : zï¿½statek Kï¿½
+	* poï¿½et vkladï¿½ : +suma Kï¿½
+	* poï¿½et vï¿½bï¿½rï¿½ : -suma Kï¿½
 	*/
 	friend ostream& operator<<(ostream &os, const BankovniUcet &u);
 };

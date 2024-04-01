@@ -10,19 +10,24 @@ int Length_Str(char *s)
 
 // ---
 
-BankovniUcet::BankovniUcet(char *cislo_uctu) : BankovniUcet(cislo_uctu, MAX_VYBER)
+BankovniUcet::BankovniUcet(char *c_uctu) : BankovniUcet(c_uctu, MAX_VYBER)
 {
-	;
+	cislo_uctu = new char[strlen(c_uctu) + 1];
+	strcpy(cislo_uctu, c_uctu);
 }
 
-BankovniUcet::BankovniUcet(char *cislo_uctu, int max_vyber)
+BankovniUcet::BankovniUcet(char *c_uctu, int max_vyber)
 {
-	/* TODO */
+	cislo_uctu = new char[strlen(c_uctu) + 1];
+	this->max_vyber = max_vyber;
+	strcpy(cislo_uctu, c_uctu);
 }
 
 BankovniUcet::~BankovniUcet()
 {
 	/* TODO */
+	delete[] cislo_uctu;
+	;
 }
 
 // ----
@@ -36,14 +41,13 @@ double BankovniUcet::GetZustatek() const
 char* BankovniUcet::GetCisloUctu() const
 {
 	/* TODO */
-	char* result = (char*)"";
+	char* result = (char*) cislo_uctu;
 	return result;
 }
 
 int BankovniUcet::GetMaxVyber() const
 {
-	/* TODO */
-	return 0;
+	return this->max_vyber;
 }
 
 void BankovniUcet::SetMaxVyber(int max_vyber)
@@ -95,4 +99,14 @@ bool BankovniUcet::Vybrat(double kolik)
 {
 	/* TODO */
 	return os;
+}
+
+char* cislo_uctu1 = new char[12]{ "123456/0800" };
+BankovniUcet* u1 = new BankovniUcet(cislo_uctu1);
+
+int main()
+{
+	cout << u1->GetCisloUctu() << endl;
+	cout << u1->GetMaxVyber() << endl;
+	return 0;
 }
